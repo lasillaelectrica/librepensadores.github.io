@@ -1,0 +1,191 @@
+<html><head><base href="https://interactive-examples.mdn.mozilla.net"><title>EduTech Innovations - Revolucionando la Educación con Tecnología</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  body {
+    font-family: 'Roboto', sans-serif;
+    line-height: 1.6;
+    color: #333;
+  }
+  .hero {
+    position: relative;
+    height: 100vh;
+    overflow: hidden;
+  }
+  .video-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+  }
+  .video-foreground,
+  .video-background iframe {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100vw;
+    height: 56.25vw; /* 16:9 aspect ratio */
+    min-height: 100vh;
+    min-width: 177.77vh; /* 16:9 aspect ratio */
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+  }
+  .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: #fff;
+  }
+  .hero-content h1 {
+    font-size: 3.5rem;
+    margin-bottom: 1rem;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+  }
+  .hero-content p {
+    font-size: 1.5rem;
+    max-width: 600px;
+    margin-bottom: 2rem;
+  }
+  .cta-btn {
+    display: inline-block;
+    background: #4CAF50;
+    color: #fff;
+    padding: 0.8rem 1.5rem;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 1.1rem;
+    transition: background 0.3s ease;
+  }
+  .cta-btn:hover {
+    background: #45a049;
+  }
+  .features {
+    padding: 5rem 2rem;
+    background: #f4f4f4;
+  }
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  .features h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 3rem;
+  }
+  .feature-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+  }
+  .feature-card {
+    background: #fff;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    text-align: center;
+    transition: transform 0.3s ease;
+  }
+  .feature-card:hover {
+    transform: translateY(-5px);
+  }
+  .feature-icon {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    color: #4CAF50;
+  }
+  .feature-title {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+  }
+  @media (max-width: 768px) {
+    .hero-content h1 {
+      font-size: 2.5rem;
+    }
+    .hero-content p {
+      font-size: 1.2rem;
+    }
+  }
+</style>
+</head>
+<body>
+  <section class="hero">
+    <div class="video-background">
+      <div class="video-foreground">
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/MWSwMv5traQ?si=EtEvZFjz2gL7nvhU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+      </div>
+    </div>
+    <div class="overlay">
+      <div class="hero-content">
+        <h1>EduTech Innovations</h1>
+        <p>Transformando el futuro de la educación con soluciones tecnológicas innovadoras</p>
+        <a href="https://edutech-innovations.com/demo" class="cta-btn">Solicitar Demo</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="features">
+    <div class="container">
+      <h2>Nuestras Soluciones Innovadoras</h2>
+      <div class="feature-grid">
+        <div class="feature-card">
+          <div class="feature-icon">🎓</div>
+          <h3 class="feature-title">Aprendizaje Adaptativo</h3>
+          <p>Plataformas personalizadas que se adaptan al ritmo y estilo de cada estudiante.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">🌐</div>
+          <h3 class="feature-title">Aulas Virtuales Inmersivas</h3>
+          <p>Experiencias de aprendizaje en línea que fomentan la colaboración y el compromiso.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">📊</div>
+          <h3 class="feature-title">Análisis de Datos Educativos</h3>
+          <p>Herramientas avanzadas para seguir el progreso y optimizar los resultados.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-icon">🤖</div>
+          <h3 class="feature-title">IA en Educación</h3>
+          <p>Soluciones de inteligencia artificial que potencian la enseñanza personalizada.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const featureCards = document.querySelectorAll('.feature-card');
+      
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.style.opacity = 1;
+            entry.target.style.transform = 'translateY(0)';
+          }
+        });
+      }, { threshold: 0.1 });
+
+      featureCards.forEach(card => {
+        card.style.opacity = 0;
+        card.style.transform = 'translateY(20px)';
+        card.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+        observer.observe(card);
+      });
+    });
+  </script>
+</body>
+</html>
